@@ -1,0 +1,15 @@
+#!/bin/sh
+
+read -p "Clean up all branches?" -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1 
+fi
+
+echo "git fetch"
+git fetch
+echo "git remote prune origin"
+git remote prune origin
+echo "git branch -D \$(git branch)"
+git branch -D $(git branch)
