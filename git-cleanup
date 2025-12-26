@@ -9,3 +9,5 @@ echo "git remote prune origin"
 git remote prune origin
 echo "git branch -D \$(git branch)"
 git branch -D $(git branch)
+echo "git branch -a"
+git branch -a
