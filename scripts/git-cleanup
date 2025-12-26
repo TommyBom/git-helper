@@ -7,7 +7,7 @@ echo "git fetch"
 git fetch
 echo "git remote prune origin"
 git remote prune origin
-echo "git branch -D \$(git branch)"
-git branch -D $(git branch)
+echo "git branch | grep -v \"^*\" | xargs git branch -D"
+git branch | grep -v "^*" | xargs git branch -D 
 echo "git branch -a"
 git branch -a
