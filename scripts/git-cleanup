@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo
+git branch -a
+echo
+
 read -p "Clean up all branches?"
 echo    
 
@@ -9,5 +13,7 @@ echo "git remote prune origin"
 git remote prune origin
 echo "git branch | grep -v \"^*\" | xargs git branch -D"
 git branch | grep -v "^*" | xargs git branch -D 
+
+echo
 echo "git branch -a"
 git branch -a
